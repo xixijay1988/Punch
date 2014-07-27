@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Punch</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="scan_text">Scan!</string>
+    <string name="statistics_text">Statistics!</string>
+    <string name="upload_text">Upload!</string>
+    <string name="scan">扫描</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
