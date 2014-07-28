@@ -32,7 +32,9 @@ import com.google.zxing.integration.android.IntentResult;
 public class ScanFragment extends android.support.v4.app.Fragment {
 
     private Button btnScan;
-    private TextView tvScan;
+    private TextView tvId;
+    private TextView tvTel;
+    private TextView tvUsername;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -46,7 +48,9 @@ public class ScanFragment extends android.support.v4.app.Fragment {
             }
         }
         Toast.makeText(getActivity(),toast,Toast.LENGTH_SHORT).show();
-        tvScan.setText(result.getContents());
+        tvId.setText(result.getContents().split(",")[0]);
+        tvUsername.setText(result.getContents().split(",")[1]);
+        tvTel.setText(result.getContents().split(",")[2]);
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -64,7 +68,9 @@ public class ScanFragment extends android.support.v4.app.Fragment {
                 scanFromFragment();
             }
         });
-        tvScan = (TextView) getActivity().findViewById(R.id.scan_text);
+        tvId = (TextView) getActivity().findViewById(R.id.tvId);
+        tvUsername = (TextView) getActivity().findViewById(R.id.tvName);
+        tvTel = (TextView) getActivity().findViewById(R.id.tvTel);
 
     }
 
@@ -74,19 +80,6 @@ public class ScanFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
 
         return inflater.inflate(R.layout.fragment_scan, container, false);
-/*        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        FrameLayout fl = new FrameLayout(getActivity());
-        fl.setLayoutParams(params);
-        DisplayMetrics dm = getResources().getDisplayMetrics();
-        final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, dm);
-        //TextView v = new TextView(getActivity());
-        Button btn = new Button(getActivity());
-        params.setMargins(margin, margin, margin, margin);
-        btn.setLayoutParams(params);
-        btn.setLayoutParams(params);
-        btn.setGravity(Gravity.CENTER);
-        btn.setText("扫码");
-        btn.setTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, dm));*/
     }
 
     public void scanFromFragment() {
