@@ -67,6 +67,7 @@
     <orderEntry type="library" exported="" name="zxing-android-minimal-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="zxing-android-integration-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-20.0.0" level="project" />
+    <orderEntry type="module" module-name="AndroidBootstrap" exported="" />
   </component>
 </module>
 

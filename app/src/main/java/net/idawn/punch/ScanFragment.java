@@ -16,8 +16,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -31,10 +36,12 @@ import com.google.zxing.integration.android.IntentResult;
  */
 public class ScanFragment extends android.support.v4.app.Fragment {
 
-    private Button btnScan;
+    private BootstrapButton btnScan;
+    private BootstrapButton btnChk;
     private TextView tvId;
     private TextView tvTel;
     private TextView tvUsername;
+    private TextView tvTime;
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -51,14 +58,16 @@ public class ScanFragment extends android.support.v4.app.Fragment {
         tvId.setText(result.getContents().split(",")[0]);
         tvUsername.setText(result.getContents().split(",")[1]);
         tvTel.setText(result.getContents().split(",")[2]);
+        DateFormat df = new SimpleDateFormat("HH:mm:ss");
+        tvTime.setText(df.format(new Date()));
         super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        btnScan = (Button) getActivity().findViewById(R.id.btnScan);
-        btnScan.setOnClickListener(new Button.OnClickListener()
+        btnScan = (BootstrapButton) getActivity().findViewById(R.id.btnScan);
+        btnScan.setOnClickListener(new BootstrapButton.OnClickListener()
         {
 
 
@@ -68,10 +77,17 @@ public class ScanFragment extends android.support.v4.app.Fragment {
                 scanFromFragment();
             }
         });
+        btnChk = (BootstrapButton)getActivity().findViewById(R.id.btnChk);
+        btnChk.setOnClickListener(new BootstrapButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         tvId = (TextView) getActivity().findViewById(R.id.tvId);
         tvUsername = (TextView) getActivity().findViewById(R.id.tvName);
         tvTel = (TextView) getActivity().findViewById(R.id.tvTel);
-
+        tvTime = (TextView)getActivity().findViewById(R.id.tvTime);
     }
 
     @Override

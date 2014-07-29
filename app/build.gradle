@@ -27,6 +27,7 @@ repositories {
 }
 
 dependencies {
+    compile project(':libs:AndroidBootstrap')
     //compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.android.support:support-v4:20.0.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])

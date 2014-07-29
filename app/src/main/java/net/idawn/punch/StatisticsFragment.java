@@ -57,7 +57,8 @@ public class StatisticsFragment extends android.support.v4.app.Fragment implemen
         GroupTime group = null;
         for (int i = 0; i < 3; i++) {
             group = new GroupTime();
-            group.setTitle("group-" + i);
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            group.setTitle(df.format(new Date()));
             groupList.add(group);
         }
 
