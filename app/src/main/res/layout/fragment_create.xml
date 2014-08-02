@@ -4,19 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="net.idawn.punch.CreateFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:text="  ID：  "
+            bootstrapbutton:bb_type="info"
+            bootstrapbutton:bb_roundedCorners="true"
+            bootstrapbutton:bb_size="default"
+            />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:id="@+id/btnID"
+            android:text="       "
+            bootstrapbutton:bb_type="danger"
+            bootstrapbutton:bb_roundedCorners="true"
+            bootstrapbutton:bb_size="default"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:text="姓名："
+            bootstrapbutton:bb_type="info"
+            bootstrapbutton:bb_roundedCorners="true"
+            bootstrapbutton:bb_size="default"
+            />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:hint="输入姓名"
+            android:id="@+id/edName"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:text="电话："
+            bootstrapbutton:bb_type="info"
+            bootstrapbutton:bb_roundedCorners="true"
+            bootstrapbutton:bb_size="default"
+            />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:hint="输入联系方式"
+            android:id="@+id/edTel"
+            />
+    </LinearLayout>
+
     <com.beardedhen.androidbootstrap.BootstrapButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Success"
-        bootstrapbutton:bb_icon_right="fa-android"
-        bootstrapbutton:bb_type="success"
-
-
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:text="添加乘客"
+        android:id="@+id/btnAdd"
+        bootstrapbutton:bb_type="info"
+        bootstrapbutton:bb_roundedCorners="true"
+        bootstrapbutton:bb_size="success"
         />
+    <ImageView
+        android:id="@+id/imageQR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

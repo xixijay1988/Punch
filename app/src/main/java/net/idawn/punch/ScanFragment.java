@@ -1,6 +1,8 @@
 package net.idawn.punch;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -23,6 +25,8 @@ import com.google.zxing.integration.android.IntentResult;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 
 /**
@@ -53,6 +57,9 @@ public class ScanFragment extends android.support.v4.app.Fragment {
             } else {
                 toast = "Scanned from fragment: " + result.getContents();
             }
+        }
+        else{
+            super.onActivityResult(requestCode, resultCode, data);
         }
         Toast.makeText(getActivity(),toast,Toast.LENGTH_SHORT).show();
         tvId.setText(result.getContents().split(",")[0]);
@@ -88,6 +95,8 @@ public class ScanFragment extends android.support.v4.app.Fragment {
         tvUsername = (TextView) getActivity().findViewById(R.id.tvName);
         tvTel = (TextView) getActivity().findViewById(R.id.tvTel);
         tvTime = (TextView)getActivity().findViewById(R.id.tvTime);
+
+
     }
 
     @Override

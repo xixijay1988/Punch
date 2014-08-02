@@ -12,6 +12,8 @@ import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
 
+import net.idawn.punch.db.MydbOpenHelper;
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -22,6 +24,9 @@ public class MainActivity extends FragmentActivity {
     static StatisticsFragment fStatisticsFrag;
     static UploadFragment fUploadFrag;
     static CreateFragment fCreateFrag;
+
+    //database
+    MydbOpenHelper myDb;
 
     /**
      * 获取当前屏幕的密度
@@ -40,6 +45,8 @@ public class MainActivity extends FragmentActivity {
         pages.setAdapter(new PunchFragmentAdapter(getSupportFragmentManager()));
         tabs.setViewPager(pages);
         setTabsValue();
+        myDb = new MydbOpenHelper(getApplicationContext(),"punch.db",null,1);
+        myDb.getWritableDatabase();
 
 
 
